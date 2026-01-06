@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  shegymz-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: shegymz-poc
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_PAYFAST_MERCHANT_ID=${NEXT_PUBLIC_PAYFAST_MERCHANT_ID:-10000100}
+      - NEXT_PUBLIC_PAYFAST_MERCHANT_KEY=${NEXT_PUBLIC_PAYFAST_MERCHANT_KEY:-46f1a4d8763a1d7949020a2628a7e2d7}
+      - PAYFAST_PASSPHRASE=${PAYFAST_PASSPHRASE:-shegymz-test-passphrase}
+      - NEXT_PUBLIC_PAYFAST_RETURN_URL=${NEXT_PUBLIC_PAYFAST_RETURN_URL:-http://localhost:3000/payment-success}
+      - NEXT_PUBLIC_PAYFAST_CANCEL_URL=${NEXT_PUBLIC_PAYFAST_CANCEL_URL:-http://localhost:3000/payment-cancelled}
+      - NEXT_PUBLIC_PAYFAST_NOTIFY_URL=${NEXT_PUBLIC_PAYFAST_NOTIFY_URL:-http://localhost:3000/api/webhook/payfast}
+      - NEXT_PUBLIC_SUBSCRIPTION_AMOUNT=${NEXT_PUBLIC_SUBSCRIPTION_AMOUNT:-499.00}
+    networks:
+      - shegymz-network
+    volumes:
+      - ./images:/app/images:ro
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  shegymz-network:
+    driver: bridge
