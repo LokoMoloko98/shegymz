@@ -109,9 +109,10 @@ export default function SubscribePage() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-lg p-8 md:p-12 border border-warmgray-200">
-                <form onSubmit={handleSubmitForm} className="space-y-6">
-                  {/* Full Name */}
+              <form onSubmit={handleSubmitForm}>
+                <div className="bg-white rounded-lg shadow-lg p-8 md:p-12 border border-warmgray-200">
+                  <div className="space-y-4 sm:space-y-6">
+                    {/* Full Name */}
                   <div>
                     <label htmlFor="fullName" className="block text-sm font-semibold text-plum-900 mb-2">
                       Full Name *
@@ -122,8 +123,8 @@ export default function SubscribePage() {
                       type="text"
                       value={formData.fullName}
                       onChange={handleInputChange}
-                      placeholder="Your full name"
-                      className="w-full px-4 py-3 border border-warmgray-300 rounded focus:outline-none focus:ring-2 focus:ring-plum-700 focus:border-transparent"
+                      placeholder="Enter your full name"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-warmgray-300 rounded focus:outline-none focus:ring-2 focus:ring-plum-700 focus:border-transparent text-sm sm:text-base"
                       required
                     />
                   </div>
@@ -217,8 +218,9 @@ export default function SubscribePage() {
                       Back to home
                     </Link>
                   </div>
-                </form>
+                </div>
               </div>
+              </form>
 
               {/* Privacy note */}
               <div className="mt-8 p-6 bg-rose-50 border border-rose-200 rounded text-center text-sm text-warmgray-700">

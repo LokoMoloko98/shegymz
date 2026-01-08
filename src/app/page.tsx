@@ -27,17 +27,17 @@ export default function LandingPage() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
-          <h1 className="text-white text-5xl md:text-7xl font-bold leading-tight mb-6 whitespace-nowrap">
+        <div className="relative z-10 text-center px-4 sm:px-6 max-w-3xl mx-auto">
+          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-4 sm:mb-6">
             Her Physique. Her Power.
           </h1>
-          <p className="text-white/90 text-lg md:text-xl font-light leading-relaxed mb-10 max-w-2xl mx-auto">
+          <p className="text-white/90 text-base sm:text-lg md:text-xl font-light leading-relaxed mb-8 sm:mb-10 max-w-2xl mx-auto px-2 sm:px-0">
             24/7 Access. Personal trainers included. No contracts.
           </p>
 
           <Link
             href="/subscribe"
-            className="inline-block px-8 py-4 bg-rose-300 text-plum-900 font-semibold rounded hover:bg-rose-200 transition-all duration-300 text-lg shadow-lg"
+            className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-rose-300 text-plum-900 font-semibold rounded hover:bg-rose-200 transition-all duration-300 text-base sm:text-lg shadow-lg"
           >
             Subscribe Here
           </Link>
@@ -69,15 +69,15 @@ export default function LandingPage() {
       </section>
 
       {/* WHAT IS SHEGYMZ SECTION */}
-      <section id="about" className="py-20 md:py-28 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-plum-900 mb-16 text-center">
+      <section id="about" className="py-12 sm:py-16 md:py-20 lg:py-28 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-plum-900 mb-8 sm:mb-12 md:mb-16 text-center">
             What Is SheGymZ?
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 mb-12 sm:mb-16">
             {/* Left: Text content */}
-            <div className="flex flex-col justify-center space-y-8">
+            <div className="flex flex-col justify-center space-y-6 sm:space-y-8">
               <div>
                 <div className="flex items-center gap-0 mb-3">
                   <Image
@@ -85,13 +85,13 @@ export default function LandingPage() {
                     alt="Bullet point"
                     width={32}
                     height={32}
-                    className="w-24 h-24 object-contain mr-1"
+                    className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 object-contain mr-2 sm:mr-3 flex-shrink-0"
                   />
-                  <h3 className="text-2xl font-semibold text-plum-800">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-plum-800">
                     Gym & CrossFit
                   </h3>
                 </div>
-                <p className="text-warmgray-700 leading-relaxed">
+                <p className="text-sm sm:text-base text-warmgray-700 leading-relaxed ml-10 sm:ml-15 md:ml-19">
                   Fully equipped private facility. Training on your terms. No crowds, no distractions.
                 </p>
               </div>
@@ -103,13 +103,13 @@ export default function LandingPage() {
                     alt="Bullet point"
                     width={32}
                     height={32}
-                    className="w-24 h-24 object-contain mr-1"
+                    className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 object-contain mr-2 sm:mr-3 flex-shrink-0"
                   />
-                  <h3 className="text-2xl font-semibold text-plum-800">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-plum-800">
                     Massage & Recovery
                   </h3>
                 </div>
-                <p className="text-warmgray-700 leading-relaxed">
+                <p className="text-sm sm:text-base text-warmgray-700 leading-relaxed ml-10 sm:ml-15 md:ml-19">
                   Dedicated recovery space. Professional massage therapy. Wellness is part of strength.
                 </p>
               </div>
@@ -121,13 +121,13 @@ export default function LandingPage() {
                     alt="Bullet point"
                     width={32}
                     height={32}
-                    className="w-24 h-24 object-contain mr-1"
+                    className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 object-contain mr-2 sm:mr-3 flex-shrink-0"
                   />
-                  <h3 className="text-2xl font-semibold text-plum-800">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-plum-800">
                     Guided Training
                   </h3>
                 </div>
-                <p className="text-warmgray-700 leading-relaxed">
+                <p className="text-sm sm:text-base text-warmgray-700 leading-relaxed ml-10 sm:ml-15 md:ml-19">
                   Personal trainers included in every membership. No add-ons. No upsells. Just support.
                 </p>
               </div>
@@ -139,13 +139,13 @@ export default function LandingPage() {
                     alt="Bullet point"
                     width={32}
                     height={32}
-                    className="w-24 h-24 object-contain mr-1"
+                    className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 object-contain mr-2 sm:mr-3 flex-shrink-0"
                   />
-                  <h3 className="text-2xl font-semibold text-plum-800">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-plum-800">
                     Meditation and Pilates
                   </h3>
                 </div>
-                <p className="text-warmgray-700 leading-relaxed">
+                <p className="text-sm sm:text-base text-warmgray-700 leading-relaxed ml-10 sm:ml-15 md:ml-19">
                   Serene natural spaces for reflection.
                 </p>
               </div>
@@ -157,13 +157,13 @@ export default function LandingPage() {
                     alt="Bullet point"
                     width={32}
                     height={32}
-                    className="w-24 h-24 object-contain mr-1"
+                    className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 object-contain mr-2 sm:mr-3 flex-shrink-0"
                   />
-                  <h3 className="text-2xl font-semibold text-plum-800">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-plum-800">
                     Member Content
                   </h3>
                 </div>
-                <p className="text-warmgray-700 leading-relaxed">
+                <p className="text-sm sm:text-base text-warmgray-700 leading-relaxed ml-10 sm:ml-15 md:ml-19">
                   Private content creation spaces. For members, by members. Ownership of your narrative.
                 </p>
               </div>
@@ -226,27 +226,27 @@ export default function LandingPage() {
       </section>
 
       {/* HOW MEMBERSHIP WORKS SECTION */}
-      <section id="membership" className="py-20 md:py-28 bg-warmgray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-plum-900 mb-16 text-center">
+      <section id="membership" className="py-12 sm:py-16 md:py-20 lg:py-28 bg-warmgray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-plum-900 mb-8 sm:mb-12 md:mb-16 text-center">
             How It Works
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
             {/* Card 1: Monthly */}
-            <div className="bg-white rounded p-8 border border-warmgray-200 hover:shadow-lg transition-shadow">
-              <div className="text-4xl mb-4">📅</div>
-              <h3 className="text-2xl font-semibold text-plum-900 mb-3">Monthly Billing</h3>
-              <p className="text-warmgray-700 leading-relaxed">
+            <div className="bg-white rounded p-6 sm:p-8 border border-warmgray-200 hover:shadow-lg transition-shadow">
+              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">📅</div>
+              <h3 className="text-xl sm:text-2xl font-semibold text-plum-900 mb-2 sm:mb-3">Monthly Billing</h3>
+              <p className="text-sm sm:text-base text-warmgray-700 leading-relaxed">
                 Simple monthly subscription. Charged automatically. No surprises.
               </p>
             </div>
 
             {/* Card 2: Flexible */}
-            <div className="bg-white rounded p-8 border border-warmgray-200 hover:shadow-lg transition-shadow">
-              <div className="text-4xl mb-4">🔓</div>
-              <h3 className="text-2xl font-semibold text-plum-900 mb-3">Cancel Anytime</h3>
-              <p className="text-warmgray-700 leading-relaxed">
+            <div className="bg-white rounded p-6 sm:p-8 border border-warmgray-200 hover:shadow-lg transition-shadow">
+              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🔓</div>
+              <h3 className="text-xl sm:text-2xl font-semibold text-plum-900 mb-2 sm:mb-3">Cancel Anytime</h3>
+              <p className="text-sm sm:text-base text-warmgray-700 leading-relaxed">
                 No contracts. No lock-in periods. Leave when you need to. Always welcome back.
               </p>
             </div>
