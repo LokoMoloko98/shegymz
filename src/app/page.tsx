@@ -12,34 +12,34 @@ export default function LandingPage() {
 
       {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background image with overlay - replace with supplied gym imagery */}
+        {/* Background image with overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/IMG_3780.jpeg"
+            src="/images/IMG_3776.jpeg"
             alt="Private women's fitness space"
             fill
             className="object-cover"
             priority
             quality={85}
           />
-          {/* Soft gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/40 via-neutral-900/20 to-neutral-900/60" />
+          {/* Purple gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-plum-900/50 via-plum-800/30 to-plum-900/70"></div>
         </div>
 
         {/* Hero Content */}
         <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
-          <h1 className="text-white text-5xl md:text-7xl font-bold leading-tight mb-6">
-            A private space for women to train, restore, and belong.
+          <h1 className="text-white text-5xl md:text-7xl font-bold leading-tight mb-6 whitespace-nowrap">
+            Her Physique. Her Power.
           </h1>
           <p className="text-white/90 text-lg md:text-xl font-light leading-relaxed mb-10 max-w-2xl mx-auto">
-            24/7 access. Personal trainers included. No contracts. Just discretion and strength.
+            24/7 Access. Personal trainers included. No contracts.
           </p>
 
           <Link
             href="/subscribe"
             className="inline-block px-8 py-4 bg-rose-300 text-plum-900 font-semibold rounded hover:bg-rose-200 transition-all duration-300 text-lg shadow-lg"
           >
-            Request Membership
+            Subscribe Here
           </Link>
         </div>
       </section>
@@ -47,13 +47,23 @@ export default function LandingPage() {
       {/* DISCRETION NOTE SECTION */}
       <section className="py-12 md:py-16 bg-neutral-50 border-b border-warmgray-200">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <p className="text-sm uppercase tracking-widest text-warmgray-600 mb-4 font-semibold">
+          {/* Small logo accent */}
+          <div className="mb-6">
+            <Image
+              src="/images/logo.png"
+              alt="SheGymZ"
+              width={150}
+              height={75}
+              className="h-16 w-auto object-contain mx-auto opacity-60"
+            />
+          </div>
+          {/* <p className="text-sm uppercase tracking-widest text-warmgray-600 mb-4 font-semibold">
             How We Grow
-          </p>
+          </p> */}
           <blockquote className="text-2xl md:text-3xl font-light text-plum-900 leading-relaxed">
-            SheGymZ does not advertise publicly.
+            SheGymZ is a private wellness space for women
             <br />
-            Membership grows through trusted referrals.
+            shaped by trust, privacy, and a sense of community
           </blockquote>
         </div>
       </section>
@@ -69,47 +79,92 @@ export default function LandingPage() {
             {/* Left: Text content */}
             <div className="flex flex-col justify-center space-y-8">
               <div>
-                <h3 className="text-2xl font-semibold text-plum-800 mb-3">
-                  🏋️ Gym & CrossFit
-                </h3>
+                <div className="flex items-center gap-0 mb-3">
+                  <Image
+                    src="/images/bullet_point.png"
+                    alt="Bullet point"
+                    width={32}
+                    height={32}
+                    className="w-24 h-24 object-contain mr-1"
+                  />
+                  <h3 className="text-2xl font-semibold text-plum-800">
+                    Gym & CrossFit
+                  </h3>
+                </div>
                 <p className="text-warmgray-700 leading-relaxed">
                   Fully equipped private facility. Training on your terms. No crowds, no distractions.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold text-plum-800 mb-3">
-                  💆 Massage & Recovery
-                </h3>
+                <div className="flex items-center gap-0 mb-3">
+                  <Image
+                    src="/images/bullet_point.png"
+                    alt="Bullet point"
+                    width={32}
+                    height={32}
+                    className="w-24 h-24 object-contain mr-1"
+                  />
+                  <h3 className="text-2xl font-semibold text-plum-800">
+                    Massage & Recovery
+                  </h3>
+                </div>
                 <p className="text-warmgray-700 leading-relaxed">
                   Dedicated recovery space. Professional massage therapy. Wellness is part of strength.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold text-plum-800 mb-3">
-                  👥 Guided Training
-                </h3>
+                <div className="flex items-center gap-0 mb-3">
+                  <Image
+                    src="/images/bullet_point.png"
+                    alt="Bullet point"
+                    width={32}
+                    height={32}
+                    className="w-24 h-24 object-contain mr-1"
+                  />
+                  <h3 className="text-2xl font-semibold text-plum-800">
+                    Guided Training
+                  </h3>
+                </div>
                 <p className="text-warmgray-700 leading-relaxed">
                   Personal trainers included in every membership. No add-ons. No upsells. Just support.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold text-plum-800 mb-3">
-                  🧘 Wellness & Meditation
-                </h3>
+                <div className="flex items-center gap-0 mb-3">
+                  <Image
+                    src="/images/bullet_point.png"
+                    alt="Bullet point"
+                    width={32}
+                    height={32}
+                    className="w-24 h-24 object-contain mr-1"
+                  />
+                  <h3 className="text-2xl font-semibold text-plum-800">
+                    Meditation and Pilates
+                  </h3>
+                </div>
                 <p className="text-warmgray-700 leading-relaxed">
-                  Quiet spaces for reflection. Guided wellness sessions. Mental strength matters.
+                  Serene natural spaces for reflection.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold text-plum-800 mb-3">
-                  📸 Member Content
-                </h3>
+                <div className="flex items-center gap-0 mb-3">
+                  <Image
+                    src="/images/bullet_point.png"
+                    alt="Bullet point"
+                    width={32}
+                    height={32}
+                    className="w-24 h-24 object-contain mr-1"
+                  />
+                  <h3 className="text-2xl font-semibold text-plum-800">
+                    Member Content
+                  </h3>
+                </div>
                 <p className="text-warmgray-700 leading-relaxed">
-                  Private content creation space. For members, by members. Ownership of your narrative.
+                  Private content creation spaces. For members, by members. Ownership of your narrative.
                 </p>
               </div>
             </div>
@@ -117,7 +172,7 @@ export default function LandingPage() {
             {/* Right: Image */}
             <div className="relative h-96 md:h-full min-h-[500px] rounded overflow-hidden">
               <Image
-                src="/images/IMG_3757.jpeg"
+                src="/images/IMG_3780.jpeg"
                 alt="SheGymZ facility"
                 fill
                 className="object-cover"
@@ -127,6 +182,46 @@ export default function LandingPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-plum-900/20 to-transparent" />
             </div>
           </div>
+
+          {/* Image Gallery Section */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
+            <div className="relative h-64 rounded overflow-hidden">
+              <Image
+                src="/images/IMG_3757.jpeg"
+                alt="Training equipment"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-300"
+                quality={85}
+              />
+            </div>
+            <div className="relative h-64 rounded overflow-hidden">
+              <Image
+                src="/images/IMG_3749.jpeg"
+                alt="Wellness space"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-300"
+                quality={85}
+              />
+            </div>
+            <div className="relative h-64 rounded overflow-hidden">
+              <Image
+                src="/images/IMG_3759.jpeg"
+                alt="Training area"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-300"
+                quality={85}
+              />
+            </div>
+            <div className="relative h-64 rounded overflow-hidden">
+              <Image
+                src="/images/IMG_3775.jpeg"
+                alt="Gym equipment"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-300"
+                quality={85}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -134,7 +229,7 @@ export default function LandingPage() {
       <section id="membership" className="py-20 md:py-28 bg-warmgray-50">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold text-plum-900 mb-16 text-center">
-            How Membership Works
+            How It Works
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -178,6 +273,16 @@ export default function LandingPage() {
       {/* PRIMARY CTA SECTION */}
       <section className="py-20 md:py-28 bg-gradient-to-br from-plum-900 via-plum-800 to-neutral-900 text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
+          {/* Logo watermark */}
+          <div className="mb-8">
+            <Image
+              src="/images/logo.png"
+              alt="SheGymZ"
+              width={180}
+              height={90}
+              className="h-18 w-auto object-contain mx-auto opacity-40"
+            />
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Ready to join a community of strength?
           </h2>
@@ -189,7 +294,7 @@ export default function LandingPage() {
             href="/subscribe"
             className="inline-block px-8 py-4 bg-rose-300 text-plum-900 font-semibold rounded hover:bg-rose-200 transition-all duration-300 text-lg shadow-lg"
           >
-            Request Membership
+            Subscribe Here
           </Link>
         </div>
       </section>

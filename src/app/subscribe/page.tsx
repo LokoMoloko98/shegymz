@@ -9,7 +9,7 @@ interface FormData {
   fullName: string;
   email: string;
   phone: string;
-  city: string;
+  bodyGoals: string;
   referralName: string;
 }
 
@@ -21,7 +21,7 @@ export default function SubscribePage() {
     fullName: '',
     email: '',
     phone: '',
-    city: '',
+    bodyGoals: '',
     referralName: '',
   });
 
@@ -45,10 +45,6 @@ export default function SubscribePage() {
     }
     if (!formData.phone.trim()) {
       setError('Please enter your phone number');
-      return false;
-    }
-    if (!formData.city.trim()) {
-      setError('Please enter your city');
       return false;
     }
     return true;
@@ -75,7 +71,7 @@ export default function SubscribePage() {
           name: formData.fullName,
           email: formData.email,
           phone: formData.phone,
-          city: formData.city,
+          bodyGoals: formData.bodyGoals,
           referralName: formData.referralName || undefined,
         }),
       });
@@ -106,7 +102,7 @@ export default function SubscribePage() {
             <div className="max-w-2xl mx-auto px-6">
               <div className="mb-12 text-center">
                 <h1 className="text-4xl md:text-5xl font-bold text-plum-900 mb-4">
-                  Request Membership
+                  Subscription Form
                 </h1>
                 <p className="text-lg text-warmgray-700">
                   Complete the form below. We&apos;ll review your request and reach out to confirm access.
@@ -166,20 +162,19 @@ export default function SubscribePage() {
                     />
                   </div>
 
-                  {/* City */}
+                  {/* Body Goals */}
                   <div>
-                    <label htmlFor="city" className="block text-sm font-semibold text-plum-900 mb-2">
-                      City *
+                    <label htmlFor="bodyGoals" className="block text-sm font-semibold text-plum-900 mb-2">
+                      Body Goals (Optional)
                     </label>
-                    <input
-                      id="city"
-                      name="city"
-                      type="text"
-                      value={formData.city}
+                    <textarea
+                      id="bodyGoals"
+                      name="bodyGoals"
+                      value={formData.bodyGoals}
                       onChange={handleInputChange}
-                      placeholder="Cape Town, Johannesburg, etc."
-                      className="w-full px-4 py-3 border border-warmgray-300 rounded focus:outline-none focus:ring-2 focus:ring-plum-700 focus:border-transparent"
-                      required
+                      placeholder="Tell us about your fitness goals and what you'd like to achieve..."
+                      className="w-full px-4 py-3 border border-warmgray-300 rounded focus:outline-none focus:ring-2 focus:ring-plum-700 focus:border-transparent resize-none"
+                      rows={3}
                     />
                   </div>
 
@@ -261,10 +256,12 @@ export default function SubscribePage() {
                     <span className="text-warmgray-700 font-medium">Phone</span>
                     <span className="text-neutral-900 font-semibold">{formData.phone}</span>
                   </div>
-                  <div className="flex justify-between border-b border-warmgray-200 pb-3">
-                    <span className="text-warmgray-700 font-medium">City</span>
-                    <span className="text-neutral-900 font-semibold">{formData.city}</span>
-                  </div>
+                  {formData.bodyGoals && (
+                    <div className="flex justify-between border-b border-warmgray-200 pb-3">
+                      <span className="text-warmgray-700 font-medium">Body Goals</span>
+                      <span className="text-neutral-900 font-semibold text-right max-w-xs">{formData.bodyGoals}</span>
+                    </div>
+                  )}
                   {formData.referralName && (
                     <div className="flex justify-between border-b border-warmgray-200 pb-3">
                       <span className="text-warmgray-700 font-medium">Referred by</span>
@@ -290,7 +287,7 @@ export default function SubscribePage() {
                   <div className="flex justify-between items-center mb-6">
                     <span className="text-lg font-semibold text-neutral-900">Monthly Amount</span>
                     <span className="text-3xl font-bold text-plum-900">
-                      R{(parseFloat(process.env.NEXT_PUBLIC_SUBSCRIPTION_AMOUNT || '499.00')).toFixed(2)}
+                      R{(parseFloat(process.env.NEXT_PUBLIC_SUBSCRIPTION_AMOUNT || '399.00')).toFixed(2)}
                     </span>
                   </div>
                   <p className="text-xs text-warmgray-600 mb-6">

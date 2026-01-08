@@ -1,38 +1,48 @@
 'use client';
 
+import Link from 'next/link';
+import Image from 'next/image';
+
 export default function Navigation() {
   return (
     <nav className="sticky top-0 z-40 backdrop-blur-md bg-neutral-50/80 border-b border-warmgray-200">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           {/* Logo / Brand */}
-          <div className="text-2xl font-semibold text-plum-900">
-            SheGymZ
-          </div>
-          <div className="hidden sm:block text-xs text-warmgray-600 font-medium tracking-widest uppercase">
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo.png"
+              alt="SheGymZ Logo"
+              width={300}
+              height={300}
+              className="h-48 w-auto object-contain"
+              priority
+            />
+          </Link>
+          <div className="hidden sm:block text-2xl text-warmgray-600 font-medium tracking-widest uppercase">
             Private Wellness
           </div>
         </div>
 
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-8">
           <a
             href="#about"
-            className="text-sm text-neutral-700 hover:text-plum-800 transition-colors"
+            className="text-2xl text-neutral-700 hover:text-plum-800 transition-colors font-medium"
           >
-            About
+            About 
           </a>
           <a
             href="#membership"
-            className="text-sm text-neutral-700 hover:text-plum-800 transition-colors"
+            className="text-2xl text-neutral-700 hover:text-plum-800 transition-colors font-medium"
           >
-            Membership
+            Subscription Details
           </a>
-          <a
+          <Link
             href="/subscribe"
-            className="px-6 py-2 bg-plum-900 text-white text-sm font-medium rounded hover:bg-plum-800 transition-colors"
+            className="px-10 py-4 bg-plum-900 text-white text-xl font-semibold rounded hover:bg-plum-800 transition-colors"
           >
-            Request Access
-          </a>
+            Subscribe Here 
+          </Link>
         </div>
       </div>
     </nav>

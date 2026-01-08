@@ -18,7 +18,7 @@ interface SubscriptionData {
   name: string;
   email: string;
   phone: string;
-  city: string;
+  bodyGoals?: string;
   referralName?: string;
 }
 
@@ -51,7 +51,7 @@ function generateSignature(params: Record<string, string>): string {
 export function createPayFastSubscriptionIntent(data: SubscriptionData): string {
   const merchantId = process.env.NEXT_PUBLIC_PAYFAST_MERCHANT_ID || '10000100';
   const merchantKey = process.env.NEXT_PUBLIC_PAYFAST_MERCHANT_KEY || '46f1a4d8763a1d7949020a2628a7e2d7';
-  const amount = process.env.NEXT_PUBLIC_SUBSCRIPTION_AMOUNT || '499.00';
+  const amount = process.env.NEXT_PUBLIC_SUBSCRIPTION_AMOUNT || '399.00';
   const returnUrl = process.env.NEXT_PUBLIC_PAYFAST_RETURN_URL || 'http://localhost:3000/payment-success';
   const cancelUrl = process.env.NEXT_PUBLIC_PAYFAST_CANCEL_URL || 'http://localhost:3000/payment-cancelled';
   const notifyUrl = process.env.NEXT_PUBLIC_PAYFAST_NOTIFY_URL || 'http://localhost:3000/api/webhook/payfast';
@@ -70,8 +70,9 @@ export function createPayFastSubscriptionIntent(data: SubscriptionData): string 
     name_last: lastName,
     email_address: data.email,
     cell_number: data.phone,
-    custom_str1: data.city, // Passed as custom field
+    custom_str1: data.phone, // Passed as custom field
     custom_str2: data.referralName || '', // Passed as custom field
+    custom_str3: data.bodyGoals || '', // Passed as custom field
     amount: amount,
     item_name: 'SheGymZ Monthly Membership',
     item_description: 'Private women\'s wellness club - 24/7 access, personal trainers included',
@@ -125,7 +126,7 @@ export interface PayFastITNPayload {
   amount_gross: string;
   amount_fee: string;
   amount_net: string;
-  custom_str1: string; // city
+  custom_str1: string; // phone
   custom_str2: string; // referral name
   name_first: string;
   name_last: string;

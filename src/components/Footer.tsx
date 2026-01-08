@@ -1,5 +1,8 @@
 'use client';
 
+import Link from 'next/link';
+import Image from 'next/image';
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -9,7 +12,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="text-lg font-semibold text-plum-900 mb-4">SheGymZ</h3>
+            <Link href="/" className="inline-block mb-4">
+              <Image
+                src="/images/logo.png"
+                alt="SheGymZ Logo"
+                width={200}
+                height={100}
+                className="h-20 w-auto object-contain"
+              />
+            </Link>
             <p className="text-sm text-warmgray-600">
               A private space for women to train, restore, and belong.
             </p>
@@ -45,7 +56,7 @@ export default function Footer() {
               Privacy
             </h4>
             <p className="text-xs text-warmgray-600 leading-relaxed">
-              SheGymZ does not advertise publicly. Membership grows through trusted referrals only.
+              SheGymZ is a private wellness space for womenshaped by trust, privacy, and a sense of community shaped by trust, privacy, and a sense of community.
             </p>
           </div>
         </div>
