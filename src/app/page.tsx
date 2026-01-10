@@ -28,7 +28,7 @@ export default function LandingPage() {
 
         {/* Hero Content */}
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-3xl mx-auto">
-          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-4 sm:mb-6">
+          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-4 sm:mb-6 whitespace-nowrap">
             Her Physique. Her Power.
           </h1>
           <p className="text-white/90 text-base sm:text-lg md:text-xl font-light leading-relaxed mb-8 sm:mb-10 max-w-2xl mx-auto px-2 sm:px-0">
