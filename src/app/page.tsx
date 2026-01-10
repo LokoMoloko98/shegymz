@@ -4,8 +4,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { useState } from 'react';
 
 export default function LandingPage() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <>
       <Navigation />
@@ -170,9 +173,10 @@ export default function LandingPage() {
             </div>
 
             {/* Right: Image */}
-            <div className="relative h-96 md:h-full min-h-[500px] rounded overflow-hidden">
+            <div className="relative h-96 md:h-full min-h-[500px] rounded overflow-hidden cursor-pointer hover:opacity-90 transition-opacity"
+                 onClick={() => setSelectedImage('/images/IMG_3757.jpeg')}>
               <Image
-                src="/images/IMG_3780.jpeg"
+                src="/images/IMG_3757.jpeg"
                 alt="SheGymZ facility"
                 fill
                 className="object-cover"
@@ -180,46 +184,84 @@ export default function LandingPage() {
               />
               {/* Subtle overlay for visual interest */}
               <div className="absolute inset-0 bg-gradient-to-t from-plum-900/20 to-transparent" />
+              {/* Zoom indicator */}
+              <div className="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                </svg>
+              </div>
             </div>
           </div>
 
           {/* Image Gallery Section */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
-            <div className="relative h-64 rounded overflow-hidden">
+            <div className="relative h-64 rounded overflow-hidden cursor-pointer group hover:opacity-90 transition-opacity"
+                 onClick={() => setSelectedImage('/images/IMG_3780.jpeg')}>
               <Image
-                src="/images/IMG_3757.jpeg"
+                src="/images/IMG_3780.jpeg"
                 alt="Training equipment"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-300"
                 quality={85}
               />
+              <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div className="bg-white/90 p-2 rounded-full">
+                  <svg className="w-6 h-6 text-plum-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                  </svg>
+                </div>
+              </div>
             </div>
-            <div className="relative h-64 rounded overflow-hidden">
+            <div className="relative h-64 rounded overflow-hidden cursor-pointer group hover:opacity-90 transition-opacity"
+                 onClick={() => setSelectedImage('/images/IMG_3749.jpeg')}>
               <Image
                 src="/images/IMG_3749.jpeg"
-                alt="Wellness space"
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-300"
-                quality={85}
-              />
-            </div>
-            <div className="relative h-64 rounded overflow-hidden">
-              <Image
-                src="/images/IMG_3759.jpeg"
-                alt="Training area"
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-300"
-                quality={85}
-              />
-            </div>
-            <div className="relative h-64 rounded overflow-hidden">
-              <Image
-                src="/images/IMG_3775.jpeg"
                 alt="Gym equipment"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-300"
                 quality={85}
               />
+              <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div className="bg-white/90 p-2 rounded-full">
+                  <svg className="w-6 h-6 text-plum-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div className="relative h-64 rounded overflow-hidden cursor-pointer group hover:opacity-90 transition-opacity"
+                 onClick={() => setSelectedImage('/images/IMG-20260110-WA0047.jpg')}>
+              <Image
+                src="/images/IMG-20260110-WA0047.jpg"
+                alt="Wellness space"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-300"
+                quality={85}
+              />
+              <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div className="bg-white/90 p-2 rounded-full">
+                  <svg className="w-6 h-6 text-plum-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div className="relative h-64 rounded overflow-hidden cursor-pointer group hover:opacity-90 transition-opacity"
+                 onClick={() => setSelectedImage('/images/IMG_3775.jpeg')}>
+              <Image
+                src="/images/IMG_3775.jpeg"
+                alt="Training area"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-300"
+                quality={85}
+              />
+              <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div className="bg-white/90 p-2 rounded-full">
+                  <svg className="w-6 h-6 text-plum-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -298,6 +340,35 @@ export default function LandingPage() {
           </Link>
         </div>
       </section>
+
+      {/* Image Zoom Modal */}
+      {selectedImage && (
+        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
+             onClick={() => setSelectedImage(null)}>
+          <div className="relative max-w-7xl max-h-[90vh] w-full h-full">
+            <Image
+              src={selectedImage}
+              alt="Zoomed image"
+              fill
+              className="object-contain"
+              quality={95}
+            />
+            {/* Close button */}
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 bg-white/90 hover:bg-white text-plum-900 p-2 rounded-full transition-colors z-10"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            {/* Click anywhere to close hint */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white/70 text-sm bg-black/50 px-3 py-1 rounded">
+              Click anywhere to close
+            </div>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </>
